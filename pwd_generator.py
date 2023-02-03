@@ -8,13 +8,15 @@ import random
 characters = list(string.ascii_letters + string.digits + "!@#$%^&*")
 
 def createPassword(length):
-	password_length = int(input("How long do you want your password to be? "))
-
+	
+	#take input and covert from string to integer
+	length = int(length)
+	
 	random.shuffle(characters)
 
 	password = []
 
-	for i in range(password_length):
+	for i in range(length):
 		password.append(random.choice(characters))
 
 	random.shuffle(password)
@@ -26,9 +28,9 @@ def createPassword(length):
 initialQuestion = input("Do you want to generate a password (y or n)  ")
 
 if initialQuestion == 'y':
-	length = input("how long do you want your password to be?:  ")
-	
+	length = input("How long do you want your password to be?  ")
 	createPassword(length)
+
 elif initialQuestion == 'n':
 	print("Exiting program")
 	quit()
