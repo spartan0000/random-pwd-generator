@@ -26,7 +26,9 @@ def createPassword(length):
 initialQuestion = input("Do you want to generate a password (y or n)  ")
 
 if initialQuestion == 'y':
-	createPassword()
+	length = input("how long do you want your password to be?:  ")
+	
+	createPassword(length)
 elif initialQuestion == 'n':
 	print("Exiting program")
 	quit()
